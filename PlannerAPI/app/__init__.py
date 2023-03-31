@@ -12,6 +12,8 @@ def create_app(config_class=DevelopmentConfig):
     db.init_app(app)
     migrate = Migrate(app, db)
 
+    migrate.init_app(app, db)
+
 
     @app.route("/")
     def index():
