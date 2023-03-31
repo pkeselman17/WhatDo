@@ -11,6 +11,7 @@ def create_app(config_class=DevelopmentConfig):
     # Initialize Flask extensions here
     db.init_app(app)
     migrate = Migrate(app, db)
+    migrate.init_app(app, db)
 
 
     @app.route("/")
